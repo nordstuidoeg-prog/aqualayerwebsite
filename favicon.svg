@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AquaLayer">
+  <rect x="1" y="1" width="62" height="62" rx="14" fill="#0F2230"/>
+  <g fill="none" stroke="#EDE7DC" stroke-width="2.4" stroke-linecap="round">
+    <path d="M8 42 L20 42 Q32 22 44 42 L56 42"/>
+  </g>
+  <path d="M32 8 L34.4 29 L46 33 L34.4 37 L32 55 L29.6 37 L18 33 L29.6 29 Z" fill="#EDE7DC"/>
+</svg>

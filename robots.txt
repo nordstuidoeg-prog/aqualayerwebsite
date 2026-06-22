@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# AquaLayer™ — marine surface protection, Egypt
+Sitemap: https://aqualayereg.com/sitemap.xml
