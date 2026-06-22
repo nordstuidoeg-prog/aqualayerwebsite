@@ -1,0 +1,31 @@
+/* ============================================================
+   AquaLayer™ — about.css
+   ============================================================ */
+.page-hero { position: relative; padding-top: calc(var(--nav-h) + clamp(56px, 10vw, 130px)); padding-bottom: var(--section-y-sm); overflow: hidden; }
+.page-hero .breadcrumb { margin-bottom: var(--s5); }
+.page-hero h1 { font-size: clamp(2.15rem, 0.5rem + 6.8vw, 6rem); line-height: .98; letter-spacing: -.025em; max-width: 15ch; margin-top: var(--s3); }
+.about-hero__lead { margin-top: var(--s5); font-size: var(--fs-lead); line-height: 1.45; color: var(--ink-soft); max-width: 52ch; font-weight: 300; }
+
+/* Mission / Vision / Purpose */
+.mvp { display: grid; gap: var(--s5); }
+@media (min-width: 820px) { .mvp { grid-template-columns: repeat(3, 1fr); gap: var(--s5); } }
+.mvp__item { padding-top: var(--s4); border-top: 1px solid var(--hair-strong); }
+.mvp__item .eyebrow { display: block; margin-bottom: var(--s3); }
+.mvp__item h3 { font-size: var(--fs-h3); margin-bottom: var(--s2); }
+.mvp__item p { color: var(--ink-soft); font-size: .98rem; }
+
+/* Five pillars */
+.pillars { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.pillar { position: relative; padding: clamp(24px,3vw,32px); border: 1px solid var(--hair); border-radius: var(--radius); background: var(--abyss-panel); }
+.pillar .n { font-family: var(--font-tech); font-variant-numeric: tabular-nums; font-size: .72rem; letter-spacing: .2em; color: var(--silver); display: block; margin-bottom: var(--s3); }
+.pillar h3 { font-size: 1.3rem; margin-bottom: var(--s2); }
+.pillar p { color: var(--ink-soft); font-size: .92rem; }
+
+/* Conditions / differentiation split */
+.about-split { display: grid; gap: var(--s5); align-items: center; }
+@media (min-width: 880px) { .about-split { grid-template-columns: 1fr 1fr; gap: clamp(40px,6vw,90px); } .about-split--reverse .about-split__media { order: -1; } }
+.about-split__media .surface { width: 100%; }
+.about-list { display: grid; gap: var(--s4); margin-top: var(--s4); }
+.about-list li { padding-left: 30px; position: relative; color: var(--ink-soft); }
+.about-list li::before { content: ''; position: absolute; left: 0; top: .55em; width: 14px; height: 7px; border-left: 1.5px solid var(--silver-bright); border-bottom: 1.5px solid var(--silver-bright); transform: rotate(-45deg); }
+.about-list b { color: var(--pearl); font-weight: 500; font-family: var(--font-serif); }

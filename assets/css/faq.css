@@ -1,0 +1,14 @@
+/* ============================================================
+   AquaLayer™ — faq.css  (accordion lives in site.css)
+   ============================================================ */
+.page-hero { position: relative; padding-top: calc(var(--nav-h) + clamp(48px, 9vw, 110px)); padding-bottom: var(--section-y-sm); overflow: hidden; }
+.page-hero .breadcrumb { margin-bottom: var(--s5); }
+.page-hero h1 { font-size: clamp(2.05rem, 0.5rem + 6.4vw, 5.5rem); line-height: .98; letter-spacing: -.025em; max-width: 16ch; margin-top: var(--s3); }
+.page-hero .lead { margin-top: var(--s4); }
+
+.faq-group { margin-bottom: var(--s7); }
+.faq-group__head { display: grid; gap: var(--s2); margin-bottom: var(--s4); }
+.faq-group__head .eyebrow { color: var(--silver); }
+.faq-group__head h2 { font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.4rem); }
+.faq-layout { display: grid; gap: var(--s5); }
+@media (min-width: 900px) { .faq-layout { grid-template-columns: 1fr 1.4fr; gap: clamp(40px,5vw,80px); align-items: start; } .faq-group__head { position: sticky; top: calc(var(--nav-h) + 24px); margin-bottom: 0; } }

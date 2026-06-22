@@ -1,0 +1,92 @@
+/* ============================================================
+   AquaLayer™ — contact.css
+   The Pearl "breath" — dark→light tonal arrival (Addendum 20)
+   ============================================================ */
+
+/* ---------- PEARL THEME (page-scoped token flip) ---------- */
+body.pearl {
+  --ink: #0A1620;
+  --ink-soft: rgba(10,22,32,.72);
+  --ink-faint: rgba(10,22,32,.5);
+  --hair: rgba(10,22,32,.14);
+  --hair-soft: rgba(10,22,32,.08);
+  --hair-strong: rgba(10,22,32,.3);
+  --silver: #6E818F;
+  --silver-bright: #455868;
+  --glow: rgba(10,22,32,.12);
+  --abyss-panel: rgba(10,22,32,.035);
+  background-color: var(--pearl);
+  color: var(--ink);
+}
+body.pearl .bg-ground {
+  background:
+    radial-gradient(120% 80% at 50% -12%, #FFFFFF, transparent 55%),
+    radial-gradient(100% 90% at 50% 120%, rgba(201,212,218,.55), transparent 60%),
+    var(--pearl);
+}
+body.pearl .bg-grain { opacity: .04; mix-blend-mode: multiply; }
+::selection { background: rgba(10,22,32,.18); }
+
+/* nav + footer adapt to light ground */
+body.pearl .brand { color: var(--abyss); }
+body.pearl .nav-links a { color: rgba(10,22,32,.68); }
+body.pearl .nav-links a:hover, body.pearl .nav-links a[aria-current="page"] { color: var(--abyss); }
+body.pearl .nav-toggle span { background: var(--abyss); }
+body.pearl .btn { color: var(--abyss); border-color: rgba(10,22,32,.3); }
+body.pearl .btn:hover, body.pearl .btn:focus-visible { border-color: rgba(10,22,32,.65); }
+body.pearl .btn::after { background: linear-gradient(105deg, transparent 38%, rgba(10,22,32,.12) 50%, transparent 62%); mix-blend-mode: multiply; }
+body.pearl .site-nav.condensed { background: rgba(237,231,220,.78); border-bottom-color: rgba(10,22,32,.12); box-shadow: 0 1px 0 0 rgba(10,22,32,.06); }
+body.pearl .btn--dark { color: var(--pearl); border-color: var(--abyss); }
+body.pearl .btn--dark::after { background: linear-gradient(105deg, transparent 38%, rgba(201,212,218,.28) 50%, transparent 62%); mix-blend-mode: screen; }
+body.pearl .site-footer::before { background: linear-gradient(90deg, transparent, rgba(10,22,32,.35) 50%, transparent); box-shadow: none; }
+
+/* ---------- LAYOUT ---------- */
+.contact-hero { position: relative; padding-top: calc(var(--nav-h) + clamp(56px, 10vw, 120px)); padding-bottom: var(--section-y); overflow: hidden; }
+.contact-hero .breadcrumb { margin-bottom: var(--s6); }
+.contact-layout { display: grid; gap: var(--s7); }
+@media (min-width: 920px) { .contact-layout { grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 104px); align-items: start; } }
+
+.contact-intro h1 { font-size: clamp(2.6rem, 1.1rem + 6vw, 5.2rem); line-height: 1.0; letter-spacing: -.025em; max-width: 14ch; margin-top: var(--s3); }
+.contact-intro .lead { margin-top: var(--s4); color: var(--ink-soft); max-width: 42ch; }
+
+.contact-blocks { display: grid; gap: 2px; margin-top: var(--s6); }
+.cblock { display: grid; gap: 4px; padding: var(--s3) 0; border-top: 1px solid var(--hair); }
+.cblock .lbl { font-family: var(--font-tech); font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--silver); }
+.cblock a, .cblock p { color: var(--ink); font-size: 1.05rem; text-decoration: none; }
+.cblock a:hover { color: var(--silver-bright); }
+
+/* ---------- FORM (underline only, ≥16px inputs) ---------- */
+.form { display: grid; gap: var(--s4); }
+.form-row { display: grid; gap: var(--s4); }
+@media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.field { display: grid; gap: 8px; }
+.field label { font-family: var(--font-tech); font-size: .64rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(10,22,32,.6); }
+.field input, .field select, .field textarea {
+  width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(10,22,32,.25);
+  padding: 10px 2px; font-size: 16px; line-height: 1.4; color: var(--abyss); border-radius: 0;
+  font-family: var(--font-sans); transition: border-color .35s var(--ease), box-shadow .35s var(--ease);
+}
+.field textarea { resize: vertical; min-height: 96px; }
+.field select {
+  appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230A1620' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 2px center;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-bottom-color: var(--abyss); box-shadow: 0 1px 0 0 var(--abyss);
+}
+.field input::placeholder, .field textarea::placeholder { color: rgba(10,22,32,.38); }
+.form .btn--dark { margin-top: var(--s2); }
+.form-status { min-height: 1.2em; font-family: var(--font-tech); font-size: .8rem; letter-spacing: .04em; color: var(--silver-bright); }
+.form-fallback { font-size: .85rem; color: var(--ink-faint); margin-top: var(--s2); }
+.form-fallback a { color: var(--silver-bright); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---------- SUCCESS STATE ---------- */
+.success[hidden] { display: none; }
+.success { padding: var(--s5) 0; }
+.success .eyebrow { color: var(--silver); margin-bottom: var(--s3); display: block; }
+.success h2 { font-size: clamp(2.2rem, 1.4rem + 3.4vw, 3.6rem); line-height: 1.04; }
+.success p { color: var(--ink-soft); margin-top: var(--s4); max-width: 42ch; }
+.success .btn--ghost { margin-top: var(--s5); color: var(--abyss); }
+.success .btn--ghost::before { background: var(--abyss); }

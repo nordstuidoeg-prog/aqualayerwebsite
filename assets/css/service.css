@@ -1,0 +1,42 @@
+/* ============================================================
+   AquaLayer™ — service.css  (individual service page template)
+   ============================================================ */
+
+.page-hero { position: relative; padding-top: calc(var(--nav-h) + clamp(48px, 9vw, 110px)); padding-bottom: var(--section-y-sm); overflow: hidden; }
+.page-hero .breadcrumb { margin-bottom: var(--s5); }
+.page-hero__inner { position: relative; z-index: 2; }
+.page-hero h1 { font-size: clamp(2.05rem, 0.5rem + 6.4vw, 5.5rem); line-height: .98; letter-spacing: -.025em; max-width: 16ch; margin-top: var(--s3); }
+.page-hero .lead { margin-top: var(--s4); }
+.page-hero__cta { margin-top: var(--s5); }
+
+.svc-hero__layout { display: grid; gap: var(--s6); }
+@media (min-width: 920px) { .svc-hero__layout { grid-template-columns: 1.15fr .85fr; align-items: center; gap: clamp(40px,5vw,80px); } }
+.svc-hero__media .surface { width: 100%; }
+
+/* lifespan chips under hero */
+.chip-row { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s5); }
+.chip { border: 1px solid var(--hair); border-radius: var(--radius); padding: 12px 16px; }
+.chip b { font-family: var(--font-serif); font-variant-numeric: tabular-nums; color: var(--silver-bright); font-size: 1.25rem; font-weight: 380; display: block; line-height: 1; }
+.chip span { font-family: var(--font-tech); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-top: 6px; }
+
+/* what it is */
+.svc-define .surface { width: 100%; }
+
+/* lifespan feature block */
+.lifespan { display: grid; gap: var(--s5); align-items: end; }
+@media (min-width: 760px) { .lifespan { grid-template-columns: auto 1fr; gap: clamp(32px,5vw,72px); align-items: center; } }
+.lifespan__big { font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-size: clamp(4rem, 2rem + 12vw, 9rem); line-height: .9; color: var(--silver-bright); font-weight: 340; letter-spacing: .01em; }
+.lifespan__big small { display: block; font-family: var(--font-tech); font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint); margin-top: var(--s3); }
+
+/* included grid in a panel */
+.included { background: var(--abyss-panel); border: 1px solid var(--hair); border-radius: var(--radius); padding: clamp(28px, 4vw, 48px); }
+
+/* who it's for / condition fit */
+.fit-grid { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(min(100%,250px),1fr)); }
+.fit { padding-top: var(--s3); border-top: 1px solid var(--hair-strong); }
+.fit h3 { font-size: var(--fs-h3); margin-bottom: var(--s2); }
+.fit p { color: var(--ink-soft); font-size: .96rem; }
+.fit__level { font-family: var(--font-tech); font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: var(--s2); }
+
+/* related services */
+.related-grid { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(min(100%,260px),1fr)); }

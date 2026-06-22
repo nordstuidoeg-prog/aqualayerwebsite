@@ -1,0 +1,96 @@
+/* ============================================================
+   AquaLayer™ — home.css  (Home template layer)
+   The Settle · reframe · system teaser · transformation · why · closing
+   ============================================================ */
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  padding-top: calc(var(--nav-h) + clamp(28px, 6vw, 56px)); padding-bottom: var(--section-y-sm);
+}
+@media (min-width: 900px) {
+  .hero { min-height: 100svh; display: flex; align-items: center; padding-bottom: var(--s7); }
+}
+.hero__grid { display: grid; gap: var(--s6); align-items: center; width: 100%; }
+@media (min-width: 900px) { .hero__grid { grid-template-columns: 1.04fr .96fr; gap: clamp(40px, 5vw, 84px); } }
+.hero__media { position: relative; }
+.hero__frame { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius);
+  overflow: hidden; border: 1px solid rgba(175,188,196,.2); background: var(--abyss-deep);
+  box-shadow: 0 40px 90px -50px rgba(0,0,0,.9); isolation: isolate; }
+@media (min-width: 900px) { .hero__frame { aspect-ratio: 4 / 5; } }
+.hero__frame .surface__scrim { display: none; }
+.hero::before { /* coated-hull light: a single band catching light */
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(80% 50% at 50% 18%, rgba(201,212,218,.08), transparent 60%),
+    radial-gradient(120% 80% at 50% 120%, var(--abyss-deep), transparent 55%);
+}
+.hero__inner { position: relative; z-index: 2; width: 100%; max-width: 32ch; }
+.hero .hero-title { max-width: 14ch; }
+.hero-tagline { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-h3); line-height: 1.2; color: var(--silver-bright); margin-top: var(--s3); max-width: 24ch; font-weight: 380; }
+.hero__inner .hero-sub { max-width: 46ch; margin-top: var(--s4); }
+.hero-eyebrow { margin-bottom: var(--s4); }
+.hero-waterline { margin: var(--s5) 0 0; max-width: 20ch; }
+.hero-cta { margin-top: var(--s5); }
+
+/* the single specular gloss pass that sweeps the hull during the Settle */
+.hero__gloss { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0;
+  background: linear-gradient(108deg, transparent 42%, rgba(201,212,218,.16) 50%, transparent 58%); mix-blend-mode: screen; }
+.settling .hero__gloss { animation: gloss-sweep .85s var(--ease) .65s both; }
+
+/* scroll cue */
+.hero__cue { position: absolute; left: 50%; bottom: 26px; z-index: 2; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: var(--font-tech); font-size: .62rem; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-faint); }
+.hero__cue span.bar { width: 1px; height: 38px; background: linear-gradient(180deg, var(--silver), transparent); }
+
+/* Settle: pre-hidden states only while .settling is active (no FOUC; JS-off shows all) */
+.settling .hero-eyebrow,
+.settling .hero-title,
+.settling .hero-tagline,
+.settling .hero-sub,
+.settling .hero-cta,
+.settling .hero-media { opacity: 0; transform: translateY(24px); }
+.settling .hero__cue { opacity: 0; }
+.is-settled .hero-media { transition: opacity .9s var(--ease) 1.05s, transform .9s var(--ease) 1.05s; opacity: 1; transform: none; }
+
+.is-settled .hero-eyebrow { transition: opacity .7s var(--ease) .9s, transform .7s var(--ease) .9s; opacity: 1; transform: none; }
+.is-settled .hero-title   { transition: opacity .7s var(--ease) 1.02s, transform .7s var(--ease) 1.02s; opacity: 1; transform: none; }
+.is-settled .hero-tagline { transition: opacity .7s var(--ease) 1.14s, transform .7s var(--ease) 1.14s; opacity: 1; transform: none; }
+.is-settled .hero-sub     { transition: opacity .7s var(--ease) 1.28s, transform .7s var(--ease) 1.28s; opacity: 1; transform: none; }
+.is-settled .hero-cta     { transition: opacity .7s var(--ease) 1.42s, transform .7s var(--ease) 1.42s; opacity: 1; transform: none; }
+.is-settled .hero__cue    { transition: opacity 1s var(--ease) 1.7s; opacity: 1; }
+.is-settled .hero-waterline { transition-delay: .2s; }
+
+@media (min-width: 768px) {
+  .hero__inner { max-width: 40ch; }
+  .hero .hero-title { max-width: 14ch; }
+}
+
+/* ---------- REFRAME ---------- */
+.reframe h2 { max-width: 16ch; }
+.reframe .reframe__lead { margin-top: var(--s4); }
+.reframe__grid { margin-top: var(--s6); display: grid; gap: var(--s5); }
+@media (min-width: 768px) { .reframe__grid { grid-template-columns: repeat(3, 1fr); gap: var(--s5); } }
+.reframe__item h3 { font-size: var(--fs-h3); margin-bottom: var(--s2); color: var(--silver-bright); }
+.reframe__item p { color: var(--ink-soft); font-size: .98rem; }
+.reframe__item { padding-top: var(--s3); border-top: 1px solid var(--hair); }
+
+/* ---------- SYSTEM TEASER (Clean·Correct·Protect) ---------- */
+.system__head { margin-bottom: var(--s6); }
+.layer-card { position: relative; }
+.layer-card .card__num { color: var(--silver); }
+.layer-card .layer-card__phase { font-family: var(--font-serif); font-style: italic; color: var(--silver-bright); font-size: 1rem; display: block; margin-bottom: var(--s2); }
+
+/* ---------- TRANSFORMATION TEASER ---------- */
+.transform__media { width: 100%; }
+.transform__copy .lead { margin-top: var(--s3); }
+
+/* ---------- WHY ---------- */
+.why__stats { margin-top: var(--s6); }
+.why .why__intro { max-width: 52ch; }
+
+/* ---------- CLOSING ---------- */
+.closing { position: relative; }
+.closing::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(90%, var(--max)); height: 1px; background: linear-gradient(90deg, transparent, var(--silver) 50%, transparent); box-shadow: 0 0 16px var(--glow); }
